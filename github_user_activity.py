@@ -8,5 +8,7 @@ with urllib.request.urlopen(url) as response:
     json_data = json.loads(data)
 
 for action in json_data:
-    print('Repositóry: ', action['repo']['name'])
+    print('Repositóry:', action['repo']['name'][11:])
+    print('Type: ', action['type'])
     print('Last Modification: ', action['created_at'][:10])
+    print('--------------------------------------------------')
